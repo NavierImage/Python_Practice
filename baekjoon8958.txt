@@ -1,0 +1,15 @@
+T = int(input())
+for i in range(T):
+    inp = input()
+    da_inp = '.'.join(inp)
+    listspace = da_inp.split('.')
+    ocnt = 0
+    save_o = 0
+    for j in listspace:
+        if j == 'O':
+            ocnt += 1
+            save_o += ocnt
+        else:
+            ocnt = 0
+    print(save_o)
+#https://www.acmicpc.net/problem/8958
