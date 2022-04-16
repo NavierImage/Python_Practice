@@ -6,3 +6,4 @@ if b < 0:
 if hour < 0:
     hour += 24
 print(hour, b)
+#https://www.acmicpc.net/problem/10156
