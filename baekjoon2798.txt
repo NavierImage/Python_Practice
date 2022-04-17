@@ -1,0 +1,24 @@
+n, m = map(int, input().split())
+x = input().split()
+
+intx = []
+for i in range(n):
+    intx.append(int(x[i]))
+
+brute = []
+for i in range(n):
+    for j in range(i + 1 , n):
+        for k in range(j + 1 , n):
+            brute.append(intx[i] + intx[j] + intx[k])
+result = 0
+brute.sort()
+for i in range(len(brute) - 1):
+    if (brute[i] <= m) & (brute[i + 1] > m):
+        result = brute[i]
+    elif brute[len(brute) - 1] < m:
+        result = brute[len(brute) - 1]
+        break
+
+print(result)
+
+#https://www.acmicpc.net/problem/2798
