@@ -1,0 +1,22 @@
+n = int(input())
+result = []
+for k in range(n + 1):
+    a = []
+    for i in str(k):
+        a.append(int(i))
+
+    if len(a) >= 3:
+        d = a[1] - a[0] 
+        for i in range(len(a) - 1):
+            if a[i + 1] - a[i] != d:
+                break
+        else:
+            result.append(k)
+    
+    else:
+        result.append(k)
+result.remove(0)
+print(len(result))
+#https://www.acmicpc.net/problem/1065
+    
+
