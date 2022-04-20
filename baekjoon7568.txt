@@ -1,21 +1,20 @@
 n = int(input())
-wei = []
-hei = []
+wei = [] #몸무게 저장
+hei = [] #키 저장
 for i in range(n):
     w, h = map(int, input().split())
     wei.append(w)
-    hei.append(h)
+    hei.append(h) 
 
-rank = []
+rank = [] #등수 저장
 for i in range(n):
-    det = n + 1
+    det = n + 1 #처음에 가장 하위 등수로 설정(자신을 비교하는 경우가 생기기에, 처음은 n + 1이지만 결국 낮은등수는 n + 1이 됨.)
     for j in range(n):
-        if (wei[i] < wei[j]) & (hei[i] < hei[j]):
-            pass
+        if (wei[i] < wei[j]) & (hei[i] < hei[j]): #키와 몸무게 둘다 작을때 빼곤 등수를 1등쪽으로 올려주면 됨(동점자도 동일한 만큼만 올라감)
+            pass 
         else:
-            det -= 1
+            det -= 1 
     rank.append(det)
 
 for i in rank:
     print(i, end =' ')
-#https://www.acmicpc.net/problem/7568
