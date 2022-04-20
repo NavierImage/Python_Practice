@@ -1,6 +1,6 @@
 det = []
 result = []
-for i in range(10000):
+for i in range(10000): #10000까지 셀프넘버를 다 구해버림.(실제 최댓값은 10000을 넘을듯...)
     
     if i < 10:
         det.append(i + i)
@@ -14,14 +14,14 @@ for i in range(10000):
 s_det = set(det) #겹치는거 집합으로 삭제
 det_l = list(s_det)
 
-for i in range(max(det) + 1):
+for i in range(max(det) + 1): #셀프넘버의 최댓값까지의 동일 정수 범위인 공간을 하나 만들고
     result.append(i)
 
-for i in range(len(det_l)):
+for i in range(len(det_l)): #해당 공간에서 앞에서 구한 셀프넘버들 다 삭제시켜버림
     result.remove(det_l[i])
 
         
-result.sort()
+result.sort() #뭔가 비효율적인거 같음...
 for i in result:
     if i < 10000:
         print(i)
