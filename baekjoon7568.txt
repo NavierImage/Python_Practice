@@ -1,0 +1,21 @@
+n = int(input())
+wei = []
+hei = []
+for i in range(n):
+    w, h = map(int, input().split())
+    wei.append(w)
+    hei.append(h)
+
+rank = []
+for i in range(n):
+    det = n + 1
+    for j in range(n):
+        if (wei[i] < wei[j]) & (hei[i] < hei[j]):
+            pass
+        else:
+            det -= 1
+    rank.append(det)
+
+for i in rank:
+    print(i, end =' ')
+#https://www.acmicpc.net/problem/7568
