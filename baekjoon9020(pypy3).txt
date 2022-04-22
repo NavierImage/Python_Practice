@@ -1,0 +1,31 @@
+T = int(input())
+
+prime = [2]
+for i in range(3, 6000):
+    for j in range(len(prime) // 2):
+        if i % prime[j] == 0:
+            break
+    else:
+        prime.append(i)
+
+real = []
+for i in range(T):
+    n = int(input())
+    result = []
+    for j in prime:
+        for k in prime:
+            if n == j + k:
+                result.append([j, k])
+            elif n < j + k:
+                break
+            else:
+                pass
+
+    real.append(result)
+
+t = []
+for i in range(len(real)):
+    a, b = real[i][len(real[i])//2]
+    print(b, a)
+#pypy3으로는 풀림....
+#https://www.acmicpc.net/problem/9020
