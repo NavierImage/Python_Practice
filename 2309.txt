@@ -1,0 +1,27 @@
+
+import sys
+h = []
+
+for i in range(9):
+    n = int(sys.stdin.readline())
+    h.append(n)
+
+det = sum(h) - 100
+found = 0
+for i in range(9):
+    for j in range(i + 1, 9):
+        if h[i] + h[j] == det:
+            wtf1 = h[i]
+            wtf2 = h[j]
+            found = 1
+            break
+    if found:
+        break
+h.remove(wtf1)
+h.remove(wtf2) #이걸 for문 안에서 돌리면 리스트 순서가 바뀌어서 이상한걸 지운다...
+h.sort()
+
+for k in h:
+    print(k)
+
+#https://www.acmicpc.net/problem/2309
