@@ -1,0 +1,19 @@
+import sys
+T = int(sys.stdin.readline())
+result = []
+for t in range(T):
+    n, m = map(int, sys.stdin.readline().split())
+    up = m
+    down = 1
+    for i in range(n - 1): #nCr, 여기선 r이 n, 횟수를따짐
+        m -= 1
+        up = up * m 
+
+    for i in range(1, n + 1): #여기선 그냥 1부터 n만큼 곱한거면 됨 조합이라서!
+        down = down * i
+    
+    result.append(int(up / down))
+
+for i in result:
+    print(i)  
+#https://www.acmicpc.net/problem/1010
