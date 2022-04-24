@@ -1,0 +1,15 @@
+n = int(input())
+st = []
+for i in range(n+100):
+    d = i
+    for j in str(i): #해당 숫자와 각 자릿수의 숫자를 모두 합침
+        d += int(j)
+    
+    if d == n:
+        result = i #가장 작은 생성자를 찾아야하므로, 생성자를 찾자마자 바로 반복문에서 빼버림
+        break
+    else:
+        result = 0
+
+print(result)
+#https://www.acmicpc.net/problem/2231
