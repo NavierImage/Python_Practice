@@ -1,0 +1,18 @@
+import sys
+n = int(sys.stdin.readline())
+d = 0
+cnt = 0
+det = n
+
+while(1):
+    cnt += 1
+    
+    for i in str(n):
+        d = d + int(i)
+    n = int(str(n)[-1] + str(d)[-1]) #입력받은 수의 가장 오른쪽자리수 + 자리수 합을 합친 수의 가장 오른쪽자리수를 입력받은 수로 업데이트!
+    d = 0
+    if det == n:
+        break
+print(cnt)
+
+#https://www.acmicpc.net/problem/1110
