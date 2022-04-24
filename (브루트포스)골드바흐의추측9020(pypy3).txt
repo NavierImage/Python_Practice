@@ -6,7 +6,7 @@ for i in range(3, 6000):
         if i % prime[j] == 0:
             break
     else:
-        prime.append(i)
+        prime.append(i) #먼저 prime을 만들어줌.. 나름 빠르게 만든다고 생각했으나 에라토스테네스의 체는 아님!
 
 real = []
 for i in range(T):
@@ -15,7 +15,7 @@ for i in range(T):
     for j in prime:
         for k in prime:
             if n == j + k:
-                result.append([j, k])
+                result.append([j, k]) #처음부터 검사해가면서 찾는데, 비효율적인듯 ㅜ n//2부터 찾는걸 혼자서 짜면 이상하게됨 계속... . 
             elif n < j + k:
                 break
             else:
