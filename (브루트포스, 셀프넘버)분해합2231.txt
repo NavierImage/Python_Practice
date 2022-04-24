@@ -1,0 +1,15 @@
+n = int(input())
+st = []
+for i in range(n+100):
+    d = i
+    for j in str(i): #숫자를 자릿수 단위로 분해
+        d += int(j)  #원래 숫자 + 분해된 숫자 해버림
+    
+    if d == n: #가장 작은 생성자를 구해야하니 제일 먼저찾으면 반복문에서 빼냄
+        result = i
+        break
+    else:
+        result = 0
+
+print(result)
+#https://www.acmicpc.net/problem/2231
