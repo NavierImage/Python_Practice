@@ -3,9 +3,9 @@ result = []
 for k in range(n + 1):
     a = []
     for i in str(k):
-        a.append(int(i))
+        a.append(int(i)) #100 전까지는 그냥 모두 각 자리수가 등차수열을 이뤄서 그냥 추가하면됨.
 
-    if len(a) >= 3:
+    if len(a) >= 3: #100을 넘어가는 순간부터는 등차수열 아닌 경우가 필요해서, 공차가 서로 다르면 break, 모두 같으면 append해줌!
         d = a[1] - a[0] 
         for i in range(len(a) - 1):
             if a[i + 1] - a[i] != d:
