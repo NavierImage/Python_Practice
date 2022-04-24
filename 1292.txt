@@ -1,0 +1,15 @@
+import sys
+a, b = map(int, sys.stdin.readline().split())
+n = 0
+
+num = []
+for k in range(46):
+    n += 1 
+    for i in range(n):
+        num.append(n) #숫자 n을 n번만큼 추가
+s = 0
+for j in range(a - 1, b):
+    s += num[j]
+
+print(s)
+#https://www.acmicpc.net/problem/1292
