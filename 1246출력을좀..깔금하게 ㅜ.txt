@@ -1,0 +1,41 @@
+import sys
+n, m = map(int, sys.stdin.readline().split())
+
+value = []
+
+for i in range(m):
+    pi = int(sys.stdin.readline())
+    value.append(pi)
+
+value.sort()
+vindex = []
+result = []
+
+if n >= len(value):
+    for i in range(len(value)): #달걀이 더 많을 때!
+        rev = 0
+        rev = value[i] * (len(value) - i)
+        vindex.append(value[i])
+        result.append(rev)
+
+else: #달걀이 사람보다 없을 때!
+    for i in range(len(value) - n):
+        rev = 0
+        for j in range(i, i + n):
+            rev = value[i] * n
+        vindex.append(value[i])
+        result.append(rev)
+
+    rev = 0
+    for k in range(len(value) - n, len(value)): #n의 범위에 들어와있지않던, 나머지 친구들 중 최대값찾기!
+        rev = value[k] * (len(value) - k)
+        vindex.append(value[k])
+        result.append(rev)
+
+for i in range(len(vindex)):
+    if max(result) == result[i]:
+        ind = i
+
+print(vindex[ind], max(result)) #출력을 좀 더럽게함... 깔끔하게할수있는법없나?
+
+#https://www.acmicpc.net/problem/1246
