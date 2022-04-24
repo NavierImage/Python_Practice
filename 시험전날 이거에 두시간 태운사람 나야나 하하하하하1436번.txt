@@ -1,8 +1,0 @@
-haa = int(input())
-a = []
-for i in range(100, 2666999):
-    if '666' in str(i):
-        a.append(i)
-a.sort()
-print(a[haa - 1])
-#https://www.acmicpc.net/problem/1436
