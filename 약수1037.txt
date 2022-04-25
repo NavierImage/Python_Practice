@@ -1,0 +1,11 @@
+import sys
+n = int(sys.stdin.readline())
+a = []
+a = sys.stdin.readline().split(' ')
+num = []
+for i in a:
+    num.append(int(i))
+num.sort()
+d = num[0] * num[-1]
+print(d)
+#https://www.acmicpc.net/problem/1037
