@@ -1,0 +1,20 @@
+n = int(input())
+a = input()
+move = a.split(' ')
+# R L U D
+dx = [0, 0, -1, 1]
+dy = [1, -1, 0, 0]
+x, y = 1, 1
+joy = ['R', 'L', 'U', 'D']
+
+for j in move:
+    if j in joy:
+        nx = x + dx[joy.index(j)]
+        ny = y + dy[joy.index(j)]
+    if nx > n or nx < 1 or ny > n or ny < 1:
+        continue
+    x, y = nx, ny
+    
+print(x, y)
+#구현 연습!
+#https://www.youtube.com/watch?v=puH2p1CQEg4
