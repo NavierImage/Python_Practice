@@ -1,0 +1,26 @@
+import sys
+n = int(sys.stdin.readline())
+group = []
+bp = 0
+for i in range(n):
+    t = sys.stdin.readline()
+    for j in t:
+        found = 0
+        cnt = 0
+        for k in t:
+            if j == k:
+                cnt += 1 #기본적으로 모든 문자에 대해 1씩추가됨
+            
+        if cnt >= 2: #진짜 연속된 문자 나오는것들 체크
+            if j * cnt in t:
+                group.append(t)  #만약 연속되어있다면, 나온 횟수 * 문자 만큼이 있어야함. 그러면 인정!
+            else:               # 예를 들어서, a가 3개 나왔는데, a * 3(aaa)가 문자에 존재해야함. 아니라면 짤
+                bp += 1         # 이렇게 짤려 튀어 나간것들만 따로 세줌
+                break
+        else:
+            pass
+
+print(n - bp) 
+#어차피 new, year이렇게 문자 하나씩만 나오는 단어들은 저 위에서 bp를 카운팅하며 나오지않았기에, 전체에서 bp만큼 빼주면 그게 그룹단어의 개수.
+#핵심아이디어는 기본적으로 개수에 모두를 넣고, 연속된 문자가 있는 단어에 대해서만 따져서 그게 조건에 맞지 않으면 빼주는거
+#https://www.acmicpc.net/problem/1316
