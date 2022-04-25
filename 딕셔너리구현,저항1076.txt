@@ -1,0 +1,11 @@
+r = {'black' : '0', 'brown' : '1', 'red' : '2', 'orange' : '3', 'yellow' : '4', 'green' : '5', 'blue' : '6', 'violet' : '7', 'grey' : '8', 'white' : '9'}
+num = ''
+for i in range(3):
+    n = input()
+    if i != 2:
+        num += r[n]
+    else:
+        num = int(num) * (10 ** int(r[n]))
+print(num)
+#https://www.acmicpc.net/problem/1076
+#딕셔너리이용
