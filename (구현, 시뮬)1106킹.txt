@@ -1,0 +1,42 @@
+import sys
+a, b, c = input().split()
+col = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'] #표현과 입력을 변환해줄거. x축움직임은 열의 변화
+row = ['1', '2', '3', '4', '5', '6', '7', '8'] #y축 움직임은 행의 변화임
+joys = ['R', 'L', 'B', 'T', 'RT', 'LT', 'RB', 'LB'] #조이스틱(이걸 누르면 이대로 움직임)
+dx = [1, -1, 0, 0, 1, -1, 1, -1] #각 조이스틱마다 어떻게 움직일지
+dy = [0, 0, -1, 1, 1, 1, -1, -1] #좌표 맞추어 설정
+
+x1 = col.index(a[0]) #x1, y1, x2, y2 좌표 입력받은 '알파벳+숫자'에 맞추어 판의 지점 설정
+y1 = row.index(a[1])
+x2 = col.index(b[0])
+y2 = row.index(b[1])
+
+for i in range(int(c)):
+    move = input()
+    nx1 = 0 #움직임을 확정짓기전에 가짜로 움직여보기 위한 변수
+    ny1 = 0
+    nx2 = 0
+    ny2 = 0
+    if move in joys:
+        nx1 = x1 + dx[joys.index(move)] #킹은 무조건 움직이니 조이스틱에 있는 것이 입력되면 그냥 움직임
+        ny1 = y1 + dy[joys.index(move)]
+    mcnt = 0
+    if (nx1, ny1) == (x2, y2): #돌은 킹이 돌의 자리에 와야 움직임
+        mcnt += 1
+        nx2 = x2 + dx[joys.index(move)]
+        ny2 = y2 + dy[joys.index(move)]
+    
+    if nx1 > 7 or ny1 > 7 or nx1 < 0 or ny1 < 0: #범위 바깥으로 나가면 가짜로 움직여보는걸 확정짓지않고 다음 반복으로 넘김
+        continue
+    
+    if nx2 > 7 or ny2 > 7 or nx2 < 0 or ny2 < 0: #돌도 마찬가지
+        continue
+
+
+    x1, y1 = nx1, ny1 #범위 안쪽이면 움직임 확정
+    if mcnt != 0: #만약 돌도 움직였다면, 그때 돌의 움직임도 확정지어줌, 이거 없으면 nx2와 ny2초깃값이 0이라서 x2 y2가 계속초기화되버림
+        x2, y2 = nx2, ny2
+    
+print("%s%s" %(col[x1], row[y1]))
+print("%s%s" %(col[x2], row[y2]))
+#https://www.acmicpc.net/problem/1063
