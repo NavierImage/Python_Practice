@@ -30,3 +30,4 @@ res.append(need6and9)
 res.append(max(same))
 print(max(res)) 
 #6과 9의 개수, 그 외숫자들의 개수가 총 얼마나 필요한지 결정짓게만드므로 그중에 가장 요구값이 큰걸 출력
+#https://www.acmicpc.net/problem/1475
