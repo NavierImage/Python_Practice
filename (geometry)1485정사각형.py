@@ -42,4 +42,4 @@ for i in range(t):
 
 for i in rlt:
     print(i)
-
+#https://www.acmicpc.net/problem/1485
