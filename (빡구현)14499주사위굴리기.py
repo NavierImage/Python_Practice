@@ -40,7 +40,7 @@ for i, t in enumerate(cmd):
         nx = 0
         ny = 0
         continue #기본적인 이동과 맵밖으로 나가면 이동 무시하는거... 여기까진 쉬웠음..ㅜㅜ
-    else:
+    else: #주사위구현부분...
         x = nx
         y = ny
         flag = 0
