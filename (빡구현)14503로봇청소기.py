@@ -75,3 +75,4 @@ while(1):
                 
     spincnt = 0
 print(cnt)
+#https://www.acmicpc.net/problem/14503
