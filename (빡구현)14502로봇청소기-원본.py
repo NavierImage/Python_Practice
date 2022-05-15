@@ -90,3 +90,4 @@ while(1):
     x, y = nx, ny #임시변수 설정
     
 print(cnt)
+#https://www.acmicpc.net/problem/14503
