@@ -34,6 +34,25 @@ for rp in range(t):
                     nroom[r-2][c-1] += room[i][j]//5
                     nroom[r-1][c-1] -= 2*(room[i][j]//5)
                 
+                elif i == mach[0] and j == 1:
+                    nroom[i-1][j] += room[i][j]//5
+                    nroom[i][j+1] += room[i][j]//5
+                    nroom[i+1][j] += room[i][j]//5
+                    nroom[i][j] -= 3*(room[i][j]//5)
+                elif i == mach[1] and j == 1:
+                    nroom[i-1][j] += room[i][j]//5
+                    nroom[i][j+1] += room[i][j]//5
+                    nroom[i+1][j] += room[i][j]//5
+                    nroom[i][j] -= 3*(room[i][j]//5)
+                elif j == 0 and (i+1) == mach[0]:
+                    nroom[i-1][j] += room[i][j]//5
+                    nroom[i][j+1] += room[i][j]//5
+                    nroom[i][j] -= 2*(room[i][j]//5)
+                elif j == 0 and (i-1) == mach[1]:
+                    nroom[i+1][j] += room[i][j]//5
+                    nroom[i][j+1] += room[i][j]//5
+                    nroom[i][j] -= 2*(room[i][j]//5)
+                    
                 elif i == 0 and j > 0 and j < c-1: #윗변
                     nroom[i][j-1] += room[i][j]//5
                     nroom[i+1][j] += room[i][j]//5
@@ -55,24 +74,7 @@ for rp in range(t):
                     nroom[i][j-1] += room[i][j]//5
                     nroom[i-1][j] += room[i][j]//5
                     nroom[i][j] -= 3*(room[i][j]//5)
-                elif i == mach[0] and j == 1:
-                    nroom[i-1][j] += room[i][j]//5
-                    nroom[i][j+1] += room[i][j]//5
-                    nroom[i+1][j] += room[i][j]//5
-                    nroom[i][j] -= 3*(room[i][j]//5)
-                elif i == mach[1] and j == 1:
-                    nroom[i-1][j] += room[i][j]//5
-                    nroom[i][j+1] += room[i][j]//5
-                    nroom[i+1][j] += room[i][j]//5
-                    nroom[i][j] -= 3*(room[i][j]//5)
-                elif j == 0 and (i+1) == mach[0]:
-                    nroom[i-1][j] += room[i][j]//5
-                    nroom[i][j+1] += room[i][j]//5
-                    nroom[i][j] -= 2*(room[i][j]//5)
-                elif j == 0 and (i-1) == mach[1]:
-                    nroom[i+1][j] += room[i][j]//5
-                    nroom[i][j+1] += room[i][j]//5
-                    nroom[i][j] -= 2*(room[i][j]//5)
+                
                 else: #나머지 case
                     nroom[i-1][j] += room[i][j]//5
                     nroom[i][j-1] += room[i][j]//5
@@ -120,5 +122,4 @@ sco = 0
 for i in room:
     sco += sum(i)
 
-print(sco+2) 
-
+print(sco+2)
