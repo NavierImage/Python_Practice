@@ -41,3 +41,4 @@ for z in range(T):
        
 for i in result:
     print(i)
+#https://www.acmicpc.net/problem/1012
