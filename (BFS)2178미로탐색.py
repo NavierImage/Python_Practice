@@ -41,4 +41,5 @@ def bfs(r, c): #bfs 함수
     print(visit[n-1][m-1]+1) 
 
 bfs(0, 0)
+#https://www.acmicpc.net/problem/2178
 
