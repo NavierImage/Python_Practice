@@ -11,7 +11,8 @@ for iii in range(tc): #테스트케이스
             
     q = deque()
     fq = deque()
-
+    #여러개 큐를 사용해주는게 차라리 낫다..!
+    #임시변수와함께...
     for i in range(n):
         for j in range(m):
             if bd[i][j] == '@': #상근이의 이동경로 bfs할 queue
