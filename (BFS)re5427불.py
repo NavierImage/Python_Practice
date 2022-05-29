@@ -72,3 +72,4 @@ for iii in range(tc): #테스트케이스
     bfs()
 for i in res:
     print(i)
+#https://www.acmicpc.net/problem/5427
