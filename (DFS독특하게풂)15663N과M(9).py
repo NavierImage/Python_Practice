@@ -38,3 +38,4 @@ def dfs(s):
 dfs(s)
 for i in result:
     print(*i)
+#https://www.acmicpc.net/problem/15663
