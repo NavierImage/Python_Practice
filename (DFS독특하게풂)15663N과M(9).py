@@ -1,5 +1,4 @@
 import sys
-import copy
 n, m = map(int, sys.stdin.readline().rstrip().split())
 num = list(map(int, sys.stdin.readline().rstrip().split()))
 num.sort()
