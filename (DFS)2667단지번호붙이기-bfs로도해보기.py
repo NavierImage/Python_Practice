@@ -45,3 +45,4 @@ l = list(complex_dict.values())
 l.sort()
 for i in l:
     print(i)
+#https://www.acmicpc.net/problem/2667
