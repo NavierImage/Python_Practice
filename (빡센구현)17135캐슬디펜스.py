@@ -49,3 +49,4 @@ for arpo in combinations(comb, 3): #이것 조합 구하는 부분 DFS로 구현
         board.append(i[:])
     res.append(kill)
 print(max(res))
+#https://www.acmicpc.net/problem/17135
