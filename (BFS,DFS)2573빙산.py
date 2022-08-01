@@ -43,6 +43,7 @@ while True:
     
     #간단한 연산으로 해결가능했는데....
     #세주는 문제 -> 세어진 값들을 저장하는 같은 차원의 배열 만들기
+    #마스킹 개념과 비슷.. 
     for i in range(n):
         for j in range(m):
             world[i][j] -= count_water[i][j]
