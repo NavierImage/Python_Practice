@@ -24,7 +24,7 @@ for i in range(n):
             sel_dir.append(dir_list[arr[i][j]-1][:])
             camera_list.append((arr[i][j], i, j))
 
-tot_list = list(product(*list(sel_dir))) #리스트끼리의 수형도(경우의수)
+tot_list = list(product(*list(sel_dir))) #리스트끼리의 수형도(경우의수) #데카르트곱(Cartesian product)
 def make_shop(dir, y, x):
     i = 0
     sub_arr[y][x] = '#'
